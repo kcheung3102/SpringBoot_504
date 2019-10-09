@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head th:replace="base :: headstuff"></head>
 <body>
-    <h2>It works!</h2>
+    <nav th:replace="base :: navbar"></nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Hello World!</h1>
+            <p>...</p>
+            <p><a class="btn btn-primary btn-lg"
+                  href="/secure" role="button">Go To Secure</a>
+
+            </p>
+        </div>
+    </div>
+    <nav th:replace="base :: footer"></nav>
+    <th:block th:replace="base :: jslinks"></th:block>
 </body>
 </html>
