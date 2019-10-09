@@ -16,15 +16,18 @@ public class SecurityConfiguration extends
 
         @Bean
         public static BCryptPasswordEncoder passwordEncoder(){
+
             return new BCryptPasswordEncoder();
         }
 
         @Override
-        protected  void configure(HttpSecurity http) throws Exception {
+        protected void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests().anyRequest().authenticated()
-                    .and().formLogin();
+                    .and().formLogin().loginPage("/login").permitAll();
         }
+
+
 
         @Override
         protected void configure(AuthenticationManagerBuilder auth)
